@@ -77,7 +77,7 @@ namespace SmartSchool_WebAPI.Data
 
             query = query.AsNoTracking()
                          .OrderBy(student => student.Id)
-                         .Where(student => student.StudentsSubjects.Any(ad => ad.SubjectId == subjectId));
+                         .Where(student => student.StudentsSubjects.Any(ad => ad.SubjectId == subjectId ));
 
             return await query.ToArrayAsync();
         }
