@@ -1,18 +1,19 @@
+using System.Collections.Generic;
+
 namespace SmartSchool_WebAPI.Models
 {
     public class Teacher
     {
         public Teacher() { }
 
-        public Teacher(int id, string firstname, string subject)
+        public Teacher(int id, string name)
         {
-            this.id = id;
-            this.firstname = firstname;
-            this.subject = subject;
+            this.Id = id;
+            this.Name = name;
         }
 
-        public int id { get; set; }
-        public string firstname { get; set; }
-        public string subject { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public IEnumerable<Subject> Subjects { get; set; }
     }
 }

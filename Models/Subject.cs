@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace SmartSchool_WebAPI.Models
 {
     public class Subject
@@ -15,6 +17,7 @@ namespace SmartSchool_WebAPI.Models
         public string Name { get; set; }
         public int TeacherId { get; set; }
         public Teacher Teacher { get; set; }
+        public IEnumerable<StudentSubject> StudentsSubjects { get; set; }
         
     }
 }

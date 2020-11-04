@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace SmartSchool_WebAPI.Models
 {
     public class Student
@@ -6,16 +8,18 @@ namespace SmartSchool_WebAPI.Models
         
         public Student(int id, string firstname, string lastname, string phone)
         {
-            this.id = id;
-            this.firstname = firstname;
-            this.lastname = lastname;
-            this.phone = phone;
+            this.Id = id;
+            this.Firstname = firstname;
+            this.Lastname = lastname;
+            this.Phone = phone;
         }
 
-        public int id { get; set; }
-        public string firstname { get; set; }
-        public string lastname { get; set; }
-        public string phone { get; set; }
+        public int Id { get; set; }
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
+        public string Phone { get; set; }
+        
+        public IEnumerable<StudentSubject> StudentsSubjects { get; set; }
     }
     
 }
