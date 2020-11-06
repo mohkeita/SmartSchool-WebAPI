@@ -88,7 +88,9 @@ namespace SmartSchool_WebAPI.Data
 
             if (includeSubject)
             {
-                query = query.Include(p => p.Subjects);
+                query = query.Include(p => p.Subjects)
+                    .ThenInclude(ad => ad.StudentsSubjects)
+                    .ThenInclude(d => d.Student);
             }
 
             query = query.AsNoTracking()
